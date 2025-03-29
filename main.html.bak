@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <title>SHADOW-MD PAIR</title>
+  <style>
+    /* 🔥 Fullscreen Background Video */
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 🔥 Main Page Styling */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* 🔥 Title Animation */
+    h3 {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: slideIn 2s forwards;
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, red, yellow);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* 🔥 Button Floating Effect */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .button {
+      width: 180px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+      color: green;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      background: black;
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+      animation: floatUpDown 2s infinite ease-in-out;
+    }
+
+    /* 🔥 Floating Animation (Up & Down) */
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* 🔥 Button Hover Effect (Size Increase) */
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px red, 0 0 40px yellow, 0 0 60px cyan;
+    }
+
+    /* 🔥 Button Click Effect (Bounce Down & Up) */
+    .button:active {
+      transform: scale(0.95) translateY(4px);
+      box-shadow: 0 0 25px yellow, 0 0 50px cyan;
+    }
+
+    /* 🔥 Footer Animation */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      animation: footerFade 3s ease-in-out infinite;
+    }
+
+    @keyframes footerFade {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔥 Background Video -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline>
+      <source src="https://files.catbox.moe/jaehqm.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="button-container">
+    <h3>SHADOW-MD WEB</h3>
+    <a href="/qr" class="button"> QR-CODE </a>
+    <a href="/pair" class="button"> PAIRING-CODE </a>
+    <a href="https://github.com/chamodya10/SHADOW-MD" class="button"> FORK BOT </a>
+    <a href="https://whatsapp.com/channel/0029Vb0BuRA6xCSY7e7QnD0f" class="button"> WHATSAPP CHANNEL </a>
+    <a href="https://wa.me/+94765781403?text=HI_Sula" class="button"> OWNER </a>
+  </div>
+
+  <footer>
+    ATHAL PODDA &copy; <span id="currentYear"></span>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
